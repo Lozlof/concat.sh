@@ -43,6 +43,7 @@ while IFS= read -r -d '' file; do
   fi
 
   printf '```\n' >> "$OUTFILE"
-done < <(find "$INPUT_DIR" -type f -readable ! -name 'mod.rs' -print0 2>/dev/null)
+#done < <(find "$INPUT_DIR" -type f -readable ! -name 'mod.rs' -print0 2>/dev/null)
+done < <(find "$INPUT_DIR" -type f -readable -print0 2>/dev/null)
 
 echo "Wrote: $OUTFILE"
